@@ -1,0 +1,43 @@
+{
+	"fighter": {
+		"name": "Fire Monster",
+		"hp": 20,
+		"moves": {
+			"1": {
+				"name": "Fighter Stance",
+				"type": "block",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [2,3,5]
+			},
+			"2": {
+				"name": "Fire Block",
+				"type": "block",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [4]
+			},
+			"3": {
+				"name": "Fire Dodge",
+				"type": "dodge",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [4]
+			},
+			"4": {
+				"name": "Fire Explosion",
+				"type": "basicAttack",
+				"damage": 7,
+				"effects": [],
+				"moveOptions": [1]
+			},
+			"5": {
+				"name": "Fire Punch",
+				"type": "basicAttack",
+				"damage": 5,
+				"effects": [4],
+				"moveOptions": [1]
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"fighter": {
+		"name": "Ice Monster",
+		"hp": 20,
+		"moves": {
+			"1": {
+				"name": "Fighter Stance",
+				"type": "block",
+				"damage": 0,
+				"effects": [],
+			"moveOptions": [2,3]
+			},
+			"2": {
+				"name": "Ice Block",
+				"type": "block",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [4]
+			},
+			"3": {
+				"name": "Ice Dodge",
+				"type": "dodge",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [5]
+			},
+			"4": {
+				"name": "Ice Explosion",
+				"type": "basicAttack",
+				"damage": 4,
+				"effects": [],
+				"moveOptions": [1]
+			},
+			"5": {
+				"name": "Ice Punch",
+				"type": "basicAttack",
+				"damage": 2,
+				"effects": [4],
+				"moveOptions": [2]
+			}
+		}
+	}
+}
