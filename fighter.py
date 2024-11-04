@@ -23,4 +23,3 @@ class Fighter:
 
     def update_next_moves(self):
         self.next_moves = self.__find_next_moves()
-

@@ -1,11 +1,21 @@
 import json
 from fighter import Fighter
+from helpers.helper import load_config
 
-def choose_fighters():
-    # fighter1 = input("Input Fighter 1: ")
-    # fighter2 = input("Input Fighter 2: ")
-    fighter1 = "fire_monster"
-    fighter2 = "ice_monster"
+
+def choose_fighters(config):
+    # Choose fighter 1
+    if config['default_fighter_1']:
+        fighter1 = config['default_fighter_1']
+    else:
+        fighter1 = input("Input Fighter 1: ")
+
+    # Choose fighter 2
+    if config['default_fighter_2']:
+        fighter2 = config['default_fighter_2']
+    else:
+        fighter2 = input("Input Fighter 2: ")
+
     return [fighter1, fighter2]
 
 def load_fighter_json_data(fighter):
@@ -39,34 +49,44 @@ def list_fighter_stats(fighter_list):
         print(f"Name: {fighter.name}\nHP: {fighter.hp}\nMoves: {fighter.moves}\nCurrent Move: {fighter.current_move}\nNext Moves: {fighter.next_moves}")
 
 
+def check_for_defeated_fighter(fighter_list):
+    if fighter_list[0].hp <= 0 and fighter_list[1].hp <= 0:
+        print(f"Both fighters lost")
+    elif fighter_list[0].hp <= 0:
+        print(f"{fighter_list[1].name} wins!")
+    elif fighter_list[1].hp <= 0:
+        print(f"{fighter_list[0].name} wins!")
+    else:
+        print(f"Something went wrong...")
+
+
 def resolve_damage(move, target):
     damage = move.get('damage')
     target.hp -= damage
+
+
+def print_fighter_move_details(fighter):
+    print(f"Name: {fighter.name}")
+    print(
+        f"Current Move: {fighter.current_move} ({fighter.moves[str(fighter.current_move)]['name']}, dmg: {fighter.moves[str(fighter.current_move)]['damage']})")
+    print(f"HP: {fighter.hp}")
+    print(f"Next Move: {fighter.next_moves}")
+    print(f"-----------")
+
 
 def battle(fighter_list):
     for i in range(20):
 
         # Check if any of the fighters were defeated
         if any(fighter.hp <= 0 for fighter in fighter_list):
-            if fighter_list[0].hp <= 0 and fighter_list[1].hp <= 0:
-                print(f"Both fighters lost")
-            elif fighter_list[0].hp <= 0:
-                print(f"{fighter_list[1].name} wins!")
-            elif fighter_list[1].hp <= 0:
-                print(f"{fighter_list[0].name} wins!")
-            else:
-                print(f"Something went wrong...")
+            check_for_defeated_fighter(fighter_list)
             break
 
         print(f"==============")
         print(f"Move: {i+1}")
         print(f"==============")
         for index, fighter in enumerate(fighter_list):
-            print(f"Name: {fighter.name}")
-            print(f"Current Move: {fighter.current_move} ({fighter.moves[str(fighter.current_move)]['name']}, dmg: {fighter.moves[str(fighter.current_move)]['damage']})")
-            print(f"HP: {fighter.hp}")
-            print(f"Next Move: {fighter.next_moves}")
-            print(f"-----------")
+            print_fighter_move_details(fighter)
 
             target = fighter_list[1] if index == 0 else fighter_list[0]
             move = fighter.moves.get(str(fighter.current_move))
@@ -77,7 +97,9 @@ def battle(fighter_list):
             fighter.update_next_moves()
 
 def main():
-    fighters = choose_fighters()
+    config = load_config()
+
+    fighters = choose_fighters(config)
     # list_fighter_moves(fighters[0])
     # list_fighter_moves(fighters[1])
 
