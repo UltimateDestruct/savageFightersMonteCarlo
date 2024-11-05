@@ -2,8 +2,10 @@ import json
 from fighter import Fighter
 from helpers.helper import load_config
 
+# Load the global config values
+config = load_config()
 
-def choose_fighters(config):
+def choose_fighters():
     # Choose fighter 1
     if config['default_fighter_1']:
         fighter1 = config['default_fighter_1']
@@ -75,18 +77,21 @@ def print_fighter_move_details(fighter):
 
 
 def battle(fighter_list):
-    for i in range(20):
+    num_turns = config['max_number_of_turns']
+    for i in range(num_turns):
 
         # Check if any of the fighters were defeated
         if any(fighter.hp <= 0 for fighter in fighter_list):
             check_for_defeated_fighter(fighter_list)
             break
 
-        print(f"==============")
-        print(f"Move: {i+1}")
-        print(f"==============")
+        if config['display_battle_log']:
+            print(f"==============")
+            print(f"Move: {i+1}")
+            print(f"==============")
         for index, fighter in enumerate(fighter_list):
-            print_fighter_move_details(fighter)
+            if config['display_battle_log']:
+                print_fighter_move_details(fighter)
 
             target = fighter_list[1] if index == 0 else fighter_list[0]
             move = fighter.moves.get(str(fighter.current_move))
@@ -97,21 +102,18 @@ def battle(fighter_list):
             fighter.update_next_moves()
 
 def main():
-    config = load_config()
 
-    fighters = choose_fighters(config)
+
+    fighters = choose_fighters()
     # list_fighter_moves(fighters[0])
     # list_fighter_moves(fighters[1])
+    # list_fighter_stats(fighter_list)
 
     fighter1 = create_fighter(fighters[0])
     fighter2 = create_fighter(fighters[1])
     fighter_list = [fighter1, fighter2]
 
-    # List fighters if you want.
-    # list_fighter_stats(fighter_list)
-
     battle(fighter_list)
-
 
 
 if __name__ == "__main__":
