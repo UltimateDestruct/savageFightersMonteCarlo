@@ -5,7 +5,7 @@
 		"moves": {
 			"1": {
 				"name": "Fighter Stance",
-				"type": "block",
+				"type": "fighterStance",
 				"damage": 0,
 				"effects": [],
 				"moveOptions": [2,3,5]
