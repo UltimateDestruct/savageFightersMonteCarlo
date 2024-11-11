@@ -62,8 +62,18 @@ def check_for_defeated_fighter(fighter_list):
         print(f"Something went wrong...")
 
 
-def resolve_damage(move, target):
-    damage = move.get('damage')
+def resolve_damage(source_move, target_move, target):
+    source_move_type = source_move.get('type')
+    target_move_type = target_move.get('type')
+    damage = 0
+
+    match (source_move_type, target_move_type):
+        case('basicAttack', 'basicAttack') | ('basicAttack', 'fighterStance'):
+            damage = source_move.get('damage')
+        case _:
+            # Other types of damage unnecessary to calculate at this time
+            print(f"No damage")
+
     target.hp -= damage
 
 
@@ -93,9 +103,16 @@ def battle(fighter_list):
             if config['display_battle_log']:
                 print_fighter_move_details(fighter)
 
-            target = fighter_list[1] if index == 0 else fighter_list[0]
-            move = fighter.moves.get(str(fighter.current_move))
-            resolve_damage(move, target)
+            if fighter == fighter_list[0]:
+                source = fighter_list[0]
+                target = fighter_list[1]
+            else:
+                source = fighter_list[1]
+                target = fighter_list[0]
+
+            source_move = source.moves.get(str(source.current_move))
+            target_move = target.moves.get(str(target.current_move))
+            resolve_damage(source_move, target_move, target)
 
             # Randomly choose a new move and update the moveset
             fighter.current_move = fighter.randomly_select_next_move()
