@@ -9,6 +9,7 @@ def load_config():
             'default_fighter_1': config['default_fighter_1'],
             'default_fighter_2': config['default_fighter_2'],
             'number_of_battles': config['number_of_battles'],
+            'max_number_of_turns': config['max_number_of_turns'],
             'display_battle_log': config['display_battle_log']
         }
         return config_values

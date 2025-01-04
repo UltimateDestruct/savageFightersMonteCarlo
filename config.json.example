@@ -1,6 +1,7 @@
 {
   "default_fighter_1": "",
   "default_fighter_2": "",
-  "number_of_battles": "",
-  "display_battle_log": ""
+  "number_of_battles": 1,
+  "max_number_of_turns": 10,
+  "display_battle_log": true
 }
