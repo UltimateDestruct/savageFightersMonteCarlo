@@ -1,0 +1,113 @@
+{
+	"fighter": {
+		"name": "Mighty Dragon",
+		"hp": 20,
+		"moves": {
+			"1": {
+				"name": "Fighter Stance",
+				"type": "fighters_stance",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [2,3,5]
+			},
+			"2": {
+				"name": "Bite",
+				"type": "basic_attack",
+				"damage": 5,
+				"effects": ["piercing_damage"],
+				"moveOptions": [3,5,13]
+			},
+			"3": {
+				"name": "Raise Tail",
+				"type": "aura",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [4,15]
+			},
+			"4": {
+				"name": "Tail Guard",
+				"type": "block",
+				"damage": 0,
+				"effects": [{"play_now": {"attack": 14}}],
+				"moveOptions": [2,3,5]
+			},
+			"5": {
+				"name": "Deep Breath",
+				"type": "aura",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [6,7,8]
+			},
+			"6": {
+				"name": "Fire Breath",
+				"type": "attack",
+				"damage": 6,
+				"effects": ["hits_everyone", "fire_damage"],
+				"moveOptions": [3,5,13]
+			},
+			"7": {
+				"name": "Ice Breath",
+				"type": "attack",
+				"damage": 3,
+				"effects": ["hits_everyone", "staggers_everyone"],
+				"moveOptions": [3,5,13]
+			},
+			"8": {
+				"name": "Charge Breath",
+				"type": "aura",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [9,10]
+			},
+			"9": {
+				"name": "Blaze",
+				"type": "attack",
+				"damage": 10,
+				"effects": ["hits_everyone", "fire_damage", {"partially_blockable": 5}],
+				"moveOptions": [1]
+			},
+			"10": {
+				"name": "Enrage Breath",
+				"type": "aura",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [11]
+			},
+			"11": {
+				"name": "Frozen",
+				"type": "attack",
+				"damage": 4,
+				"effects": [["auto_kill", "unblockable", "single_target"], ["frozen", "unblockable", "undodgeable", "ice_damage", "hits_everyone"]],
+				"moveOptions": [1]
+			},
+			"12": {
+				"name": "Wing Flap",
+				"type": "attack",
+				"damage": 0,
+				"effects": ["knock_down"],
+				"moveOptions": [2,3,5]
+			},
+			"13": {
+				"name": "Wing Shield",
+				"type": "block",
+				"damage": 0,
+				"effects": [{"play_now": {"causes_damage": 12}}],
+				"moveOptions": [2,3,5]
+			},
+			"14": {
+				"name": "Tail Smack",
+				"type": "attack",
+				"damage": 0,
+				"effects": ["knock_down"],
+				"moveOptions": [2,3,5]
+			},
+			"15": {
+				"name": "Tail Swipe",
+				"type": "attack",
+				"damage": 7,
+				"effects": ["bashing_damage", {"target_dodged": {"all_other_opponents": [{"damage": 3}, "bashing_damage"]}}],
+				"moveOptions": [2,5]
+			}
+		}
+	}
+}

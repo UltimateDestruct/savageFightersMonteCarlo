@@ -1,0 +1,113 @@
+{
+	"fighter": {
+		"name": "Elemental Mage",
+		"hp": 20,
+		"moves": {
+			"1": {
+				"name": "Fighter Stance",
+				"type": "fighters_stance",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [2,3,4,5]
+			},
+			"2": {
+				"name": "Fire Touch",
+				"type": ["spell","basic_attack"],
+				"damage": 5,
+				"effects": ["fire_damage", "magic_damage"],
+				"moveOptions": [3,4,8,13]
+			},
+			"3": {
+				"name": "Lightning Step",
+				"type": "dodge",
+				"damage": 0,
+				"effects": ["side_movement"],
+				"moveOptions": [4,7]
+			},
+			"4": {
+				"name": "Step Back",
+				"type": "dodge",
+				"damage": 0,
+				"effects": ["back_movement"],
+				"moveOptions": [2,3,5]
+			},
+			"5": {
+				"name": "Frost Touch",
+				"type": ["spell","basic_attack"],
+				"damage": 3,
+				"effects": ["ice_damage","stops_opponent_basic_attack"],
+				"moveOptions": [4,6]
+			},
+			"6": {
+				"name": "Frozen Spear",
+				"type": ["spell","attack"],
+				"damage": 7,
+				"effects": ["ice_damage"],
+				"moveOptions": [4,15]
+			},
+			"7": {
+				"name": "Lightning Trap",
+				"type": ["spell","attack"],
+				"damage": 4,
+				"effects": ["lightning_damage",{"opponent_basic_attack": ["no_damage_to_you", "knockdown"]}],
+				"moveOptions": [4,9]
+			},
+			"8": {
+				"name": "Wind",
+				"type": ["spell","block"],
+				"damage": 0,
+				"effects": ["blocks_action"],
+				"moveOptions": [2,3,4,5]
+			},
+			"9": {
+				"name": "Lightning Charge",
+				"type": ["spell","aura"],
+				"damage": 0,
+				"effects": [],
+				"moveOptions": [10,11]
+			},
+			"10": {
+				"name": "Lightning Blast",
+				"type": ["spell","attack"],
+				"damage": 12,
+				"effects": ["lightning_damage","hits_if_dodged_with_back_movement"],
+				"moveOptions": [11]
+			},
+			"11": {
+				"name": "Lightning Nova",
+				"type": ["spell","attack"],
+				"damage": 8,
+				"effects": ["lightning_damage","cant_be_dodged"],
+				"moveOptions": [1]
+			},
+			"12": {
+				"name": "Fire Spin",
+				"type": ["spell","dodge","attack"],
+				"damage": 0,
+				"effects": [{"opponent_basic_attack": [{"damage": 5}, "fire_damage"]}, "dodge", "side_movement"],
+				"moveOptions": [2,4]
+			},
+			"13": {
+				"name": "Fire Bolt",
+				"type": ["spell","attack"],
+				"damage": 5,
+				"effects": ["fire_damage"],
+				"moveOptions": [12,14]
+			},
+			"14": {
+				"name": "Fire Blast",
+				"type": ["spell","attack"],
+				"damage": 10,
+				"effects": ["fire_damage"],
+				"moveOptions": [1]
+			},
+			"15": {
+				"name": "Ice Shield",
+				"type": ["spell","block"],
+				"damage": 0,
+				"effects": [{"opponent_attack": [{"damage": 3}, "ice_damage"]}, "blocks_action"],
+				"moveOptions": [4,5]
+			}
+		}
+	}
+}

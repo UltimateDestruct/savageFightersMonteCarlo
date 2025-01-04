@@ -1,0 +1,113 @@
+{
+	"fighter": {
+		"name": "",
+		"hp": 20,
+		"moves": {
+			"1": {
+				"name": "Fighter Stance",
+				"type": "fighters_stance",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"2": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"3": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"4": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"5": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"6": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"7": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"8": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"9": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"10": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"11": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"12": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"13": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"14": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			},
+			"15": {
+				"name": "",
+				"type": "",
+				"damage": 0,
+				"effects": [],
+				"moveOptions": []
+			}
+		}
+	}
+}
